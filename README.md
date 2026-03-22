@@ -6,6 +6,8 @@
 
 Monitor folders for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period.
 
+![Screenshot of the personal settings](https://raw.githubusercontent.com/nextcloud/upload_monitor/main/docs/screenshot.png)
+
 ## Features
 
 - Watch rules: configure folders with inactivity thresholds (in days)

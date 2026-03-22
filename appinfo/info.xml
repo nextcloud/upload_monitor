@@ -16,10 +16,16 @@
 
 	<category>monitoring</category>
 
-	<bugs>https://github.com/nextcloud/server/issues</bugs>
+
+	<website>https://github.com/nextcloud/upload_monitor</website>
+	<bugs>https://github.com/nextcloud/upload_monitor/issues</bugs>
+	<repository>https://github.com/nextcloud/upload_monitor.git</repository>
+
+	<screenshot>https://raw.githubusercontent.com/nextcloud/upload_monitor/main/docs/screenshot.png</screenshot>
+
 
 	<dependencies>
-		<nextcloud min-version="34" max-version="34"/>
+		<nextcloud min-version="33" max-version="34"/>
 	</dependencies>
 
 	<background-jobs>
