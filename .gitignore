@@ -1,0 +1,72 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
+# just sane ignores
+.*.sw[po]
+*.bak
+*.BAK
+*~
+*.orig
+*.class
+.cvsignore
+Thumbs.db
+*.py[co]
+_darcs/*
+CVS/*
+.svn/*
+RCS/*
+*.backup*
+
+# kdevelop
+.kdev
+*.kdev4
+*.kate-swp
+
+# Lokalize
+*lokalize*
+
+# eclipse
+.project
+.settings
+
+# netbeans
+nbproject
+
+# phpStorm
+.idea
+*.iml
+
+# geany
+*.geany
+
+# Cloud9IDE
+.settings.xml
+.c9revisions
+
+# vim ex mode
+.vimrc
+
+# Mac OS
+.DS_Store
+
+# WebFinger
+.well-known
+/.buildpath
+
+# Node
+/node_modules
+
+# Tests - auto-generated files
+/tests/Unit/coverage*
+/tests/Unit/clover.xml
+/tests/Unit/.phpunit.cache
+/tests/Unit/.phpunit.result.cache
+/.php-cs-fixer.cache
+
+# Build related files
+/npm-debug.log
+/css
+/js
+/build
+/vendor
+/vendor-bin/*/vendor
