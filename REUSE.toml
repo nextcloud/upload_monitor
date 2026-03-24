@@ -6,13 +6,7 @@ SPDX-PackageSupplier = "Nextcloud <info@nextcloud.com>"
 SPDX-PackageDownloadLocation = "https://github.com/nextcloud/upload_monitor/"
 
 [[annotations]]
-path = ["js/**.js", "js/**.js.map"]
-precedence = "aggregate"
-SPDX-FileCopyrightText = "2026 Nextcloud GmbH and Nextcloud contributors"
-SPDX-License-Identifier = "AGPL-3.0-or-later"
-
-[[annotations]]
-path = ["css/**.css", "css/**.css.map"]
+path = ["js/**.js", "js/**.js.map", "css/**.css", "css/**.css.map", "docs/screenshot.png"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Nextcloud GmbH and Nextcloud contributors"
 SPDX-License-Identifier = "AGPL-3.0-or-later"
