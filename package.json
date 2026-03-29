@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@nextcloud/browserslist-config": "^3.0.1",
-    "@nextcloud/eslint-config": "^6.1.0",
+    "@nextcloud/eslint-config": "^8.4.2",
     "@nextcloud/stylelint-config": "^3.2.1",
     "@rspack/cli": "^1.7.10",
     "@rspack/core": "^1.7.10",
