@@ -30,7 +30,7 @@
     "@nextcloud/eslint-config": "^9.0.0-rc.8",
     "@nextcloud/stylelint-config": "^3.2.1",
     "@rspack/cli": "^1.7.11",
-    "@rspack/core": "^1.7.10",
+    "@rspack/core": "^1.7.11",
     "browserslist": "^4.24.4",
     "css-loader": "^7.1.2",
     "eslint": "^9.39.0",
