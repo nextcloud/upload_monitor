@@ -1,0 +1,7 @@
+{ "translations": {
+    "Choose" : "Auswielen",
+    "Folder" : "Dossier",
+    "Save" : "Späicheren",
+    "Cancel" : "Cancel"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

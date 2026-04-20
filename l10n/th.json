@@ -1,0 +1,9 @@
+{ "translations": {
+    "Choose" : "เลือก",
+    "Folder" : "โฟลเดอร์",
+    "Create" : "สร้าง",
+    "Never" : "ไม่เคย",
+    "Save" : "บันทึก",
+    "Cancel" : "Cancel"
+},"pluralForm" :"nplurals=1; plural=0;"
+}

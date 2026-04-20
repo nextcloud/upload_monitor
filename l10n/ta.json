@@ -1,0 +1,7 @@
+{ "translations": {
+    "Choose" : "தெரிவுசெய்க ",
+    "Folder" : "கோப்புறை",
+    "Save" : "சேமிக்க ",
+    "Cancel" : "Cancel"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

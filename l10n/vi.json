@@ -1,0 +1,13 @@
+{ "translations": {
+    "Invalid folder path" : "Đường dẫn tới thư mục không hợp lệ",
+    "Folder not found" : "Không thể tìm thấy thư mục",
+    "Choose" : "Chọn",
+    "Folder" : "Thư mục",
+    "Days" : "Ngày",
+    "Create" : "Tạo",
+    "Never" : "Không bao giờ",
+    "Save" : "Lưu",
+    "Cancel" : "Cancel",
+    "_%n day_::_%n days_" : ["%n ngày"]
+},"pluralForm" :"nplurals=1; plural=0;"
+}

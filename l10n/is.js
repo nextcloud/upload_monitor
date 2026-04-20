@@ -1,0 +1,16 @@
+OC.L10N.register(
+    "upload_monitor",
+    {
+    "Invalid folder path" : "Ógild slóð á möppu",
+    "Folder not found" : "Mappa fannst ekki",
+    "Choose" : "Velja",
+    "Folder" : "Mappa",
+    "Select folder" : "Veldu möppu",
+    "Days" : "Dagar",
+    "Create" : "Búa til",
+    "Never" : "Aldrei",
+    "Save" : "Vista",
+    "Cancel" : "Cancel",
+    "_%n day_::_%n days_" : ["%n dagur","%n dagar"]
+},
+"nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");

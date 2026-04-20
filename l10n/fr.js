@@ -1,0 +1,16 @@
+OC.L10N.register(
+    "upload_monitor",
+    {
+    "Invalid folder path" : "Chemin d'accès du dossier invalide",
+    "Folder not found" : "Dossier introuvable",
+    "Choose" : "Choisir",
+    "Folder" : "Dossier",
+    "Threshold" : "Seuil",
+    "Days" : "Jours",
+    "Create" : "Créer",
+    "Never" : "Jamais",
+    "Save" : "Enregistrer",
+    "Cancel" : "Annuler",
+    "_%n day_::_%n days_" : ["%n jour ","%n jours","%n jours "]
+},
+"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

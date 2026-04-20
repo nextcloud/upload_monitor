@@ -1,0 +1,12 @@
+OC.L10N.register(
+    "upload_monitor",
+    {
+    "Choose" : "තෝරන්න",
+    "Folder" : "බහාලුම",
+    "Select folder" : "බහාලුම තෝරන්න",
+    "Days" : "දින",
+    "Create" : "සාදන්න",
+    "Cancel" : "Cancel",
+    "_%n day_::_%n days_" : ["දින %n යි","දින %n යි"]
+},
+"nplurals=2; plural=(n != 1);");

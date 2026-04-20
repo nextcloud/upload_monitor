@@ -1,0 +1,7 @@
+{ "translations": {
+    "Choose" : "აირჩიეთ",
+    "Never" : "არასდროს",
+    "Save" : "შენახვა",
+    "Cancel" : "Cancel"
+},"pluralForm" :"nplurals=2; plural=(n!=1);"
+}

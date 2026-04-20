@@ -1,0 +1,17 @@
+OC.L10N.register(
+    "upload_monitor",
+    {
+    "Invalid folder path" : "Érvénytelen mappaútvonal",
+    "Folder not found" : "A mappa nem található",
+    "Choose" : "Válasszon",
+    "Folder" : "Mappa",
+    "Threshold" : "Küszöbérték",
+    "Select folder" : "Válasszon egy mappát",
+    "Days" : "Napok",
+    "Create" : "Létrehozás",
+    "Never" : "Soha",
+    "Save" : "Mentés",
+    "Cancel" : "Mégse",
+    "_%n day_::_%n days_" : ["%n nap","%n nap"]
+},
+"nplurals=2; plural=(n != 1);");

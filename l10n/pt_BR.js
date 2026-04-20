@@ -1,0 +1,17 @@
+OC.L10N.register(
+    "upload_monitor",
+    {
+    "Invalid folder path" : "Caminho de pasta inválido",
+    "Folder not found" : "Pasta não encontrada",
+    "Choose" : "Escolher",
+    "Folder" : "Pasta",
+    "Threshold" : "Limite",
+    "Select folder" : "Selecionar pasta",
+    "Days" : "Dias",
+    "Create" : "Criar",
+    "Never" : "Nunca",
+    "Save" : "Salvar",
+    "Cancel" : "Cancelar",
+    "_%n day_::_%n days_" : ["%n dia","%n dias","%n dias"]
+},
+"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

@@ -1,0 +1,15 @@
+{ "translations": {
+    "Invalid folder path" : "無效的資料夾路徑",
+    "Folder not found" : "找不到資料夾",
+    "Choose" : "選擇",
+    "Folder" : "資料夾",
+    "Threshold" : "閾值",
+    "Select folder" : "選取資料夾",
+    "Days" : "天",
+    "Create" : "建立",
+    "Never" : "永不",
+    "Save" : "儲存",
+    "Cancel" : "取消",
+    "_%n day_::_%n days_" : ["%n 天"]
+},"pluralForm" :"nplurals=1; plural=0;"
+}

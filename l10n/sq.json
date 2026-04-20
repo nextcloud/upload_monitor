@@ -1,0 +1,9 @@
+{ "translations": {
+    "Choose" : "Zgjidhni",
+    "Folder" : "Dosje",
+    "Create" : "Krijo",
+    "Never" : "Kurrë",
+    "Save" : "Ruaje",
+    "Cancel" : "Cancel"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

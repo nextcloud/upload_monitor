@@ -1,0 +1,17 @@
+OC.L10N.register(
+    "upload_monitor",
+    {
+    "Invalid folder path" : "無效的資料夾路徑",
+    "Folder not found" : "找不到資料夾",
+    "Choose" : "選擇",
+    "Folder" : "資料夾",
+    "Threshold" : "閾點",
+    "Select folder" : "選擇資料夾",
+    "Days" : "天",
+    "Create" : "創建",
+    "Never" : "從不",
+    "Save" : "儲存",
+    "Cancel" : "取消",
+    "_%n day_::_%n days_" : ["%n 天"]
+},
+"nplurals=1; plural=0;");
