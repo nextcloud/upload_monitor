@@ -2,3 +2,5 @@
 # SPDX-License-Identifier: CC0-1.0
 # compiled vue templates
 js/
+vendor/
+vendor-bin/
