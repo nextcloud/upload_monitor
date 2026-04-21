@@ -77,7 +77,7 @@ class RuleController extends OCSController {
 		try {
 			$node = $this->userFolder->get($directoryPath);
 			if (!($node instanceof Folder)) {
-				return new DataResponse(['message' => $this->l->t('The selected path is not a folder')], Http::STATUS_BAD_REQUEST);
+				return new DataResponse(['message' => $this->l->t('Selected path is not a folder')], Http::STATUS_BAD_REQUEST);
 			}
 		} catch (NotFoundException) {
 			return new DataResponse(['message' => $this->l->t('Folder not found')], Http::STATUS_NOT_FOUND);

@@ -156,7 +156,7 @@ export default {
 		async addRule() {
 			const thresholdDays = parseInt(this.newThresholdDays, 10)
 			if (!this.newDirectoryPath || isNaN(thresholdDays) || thresholdDays < 1) {
-				showError(t('upload_monitor', 'Please provide a valid folder and threshold'))
+				showError(t('upload_monitor', 'Provide a valid folder and threshold'))
 				return
 			}
 

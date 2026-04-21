@@ -62,7 +62,7 @@ class Notifier implements INotifier {
 			case 'directory_missing':
 				$path = $params['path'];
 				$notification->setParsedSubject(
-					$l->t('The watched folder %1$s no longer exists. You may want to remove this watch rule.', [$path])
+					$l->t('Watched folder %1$s no longer exists. You may want to remove this watch rule.', [$path])
 				);
 				break;
 
