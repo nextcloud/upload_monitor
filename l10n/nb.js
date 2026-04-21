@@ -11,7 +11,6 @@ OC.L10N.register(
     "Create" : "Opprett",
     "Never" : "Aldri",
     "Save" : "Lagre",
-    "Cancel" : "Cancel",
-    "_%n day_::_%n days_" : ["%n dag","%n dager"]
+    "Cancel" : "Cancel"
 },
 "nplurals=2; plural=(n != 1);");

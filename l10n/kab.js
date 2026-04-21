@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Choose" : "Fren",
     "Folder" : "Akaram",
-    "Create" : "Snulfu-d",
     "Save" : "Sekles",
     "Cancel" : "Semmet"
 },

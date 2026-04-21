@@ -7,7 +7,6 @@ OC.L10N.register(
     "Create" : "Crea",
     "Never" : "Mai",
     "Save" : "Sarva",
-    "Cancel" : "Cancel",
-    "_%n day_::_%n days_" : ["%n dies","%n dies"]
+    "Cancel" : "Cancel"
 },
 "nplurals=2; plural=(n != 1);");

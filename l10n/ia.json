@@ -1,6 +1,5 @@
 { "translations": {
     "Folder" : "Dossier",
-    "Never" : "Nunquam",
     "Save" : "Salveguardar",
     "Cancel" : "Cancel"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"

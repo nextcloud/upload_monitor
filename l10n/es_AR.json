@@ -1,7 +1,4 @@
 { "translations": {
-    "Choose" : "Elige",
-    "Never" : "Nunca",
-    "Save" : "Guardar",
-    "Cancel" : "Cancel"
+    "Choose" : "Elige"
 },"pluralForm" :"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }

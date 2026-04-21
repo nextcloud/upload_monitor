@@ -2,7 +2,6 @@ OC.L10N.register(
     "upload_monitor",
     {
     "Folder" : "Dossier",
-    "Never" : "Nunquam",
     "Save" : "Salveguardar",
     "Cancel" : "Cancel"
 },

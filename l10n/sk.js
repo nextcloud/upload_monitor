@@ -11,7 +11,6 @@ OC.L10N.register(
     "Create" : "Vytvoriť",
     "Never" : "Nikdy",
     "Save" : "Uložiť",
-    "Cancel" : "Zrušiť",
-    "_%n day_::_%n days_" : ["%n deň","%n dni","%n dní","%n dní"]
+    "Cancel" : "Zrušiť"
 },
 "nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);");

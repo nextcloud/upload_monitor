@@ -9,7 +9,6 @@
     "Create" : "Tengeneza",
     "Never" : "Kamwe",
     "Save" : "Hifadhi",
-    "Cancel" : "Ghairi",
-    "_%n day_::_%n days_" : ["%n day","%n siku"]
+    "Cancel" : "Ghairi"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

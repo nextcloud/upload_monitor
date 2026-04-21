@@ -6,7 +6,6 @@ OC.L10N.register(
     "Create" : "Crear",
     "Never" : "Jamai",
     "Save" : "Enregistrar",
-    "Cancel" : "Cancel",
-    "_%n day_::_%n days_" : ["%n jorn","%n jorns"]
+    "Cancel" : "Cancel"
 },
 "nplurals=2; plural=(n > 1);");

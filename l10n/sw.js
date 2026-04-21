@@ -11,7 +11,6 @@ OC.L10N.register(
     "Create" : "Tengeneza",
     "Never" : "Kamwe",
     "Save" : "Hifadhi",
-    "Cancel" : "Ghairi",
-    "_%n day_::_%n days_" : ["%n day","%n siku"]
+    "Cancel" : "Ghairi"
 },
 "nplurals=2; plural=(n != 1);");
