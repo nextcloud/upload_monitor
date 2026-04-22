@@ -2,6 +2,7 @@ OC.L10N.register(
     "upload_monitor",
     {
     "Choose" : "Tagh",
+    "Create" : "Cruthaich",
     "Save" : "Sàbhail",
     "Cancel" : "Cancel"
 },

@@ -1,0 +1,8 @@
+{ "translations": {
+    "Choose" : "Seç",
+    "Folder" : "Qovluq",
+    "Never" : "Heç vaxt",
+    "Save" : "Saxla",
+    "Cancel" : "Cancel"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

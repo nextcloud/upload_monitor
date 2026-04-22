@@ -1,0 +1,17 @@
+OC.L10N.register(
+    "upload_monitor",
+    {
+    "Invalid folder path" : "Camí de la carpeta no vàlid",
+    "Folder not found" : "No s'ha trobat la carpeta",
+    "Choose" : "Tria",
+    "Folder" : "Carpeta",
+    "Threshold" : "Llindar",
+    "Select folder" : "Trieu una carpeta",
+    "Days" : "Dies",
+    "Create" : "Crea",
+    "Never" : "Mai",
+    "Save" : "Desa",
+    "Cancel" : "Cancel",
+    "_%n day_::_%n days_" : ["%n dia","%n dies"]
+},
+"nplurals=2; plural=(n != 1);");

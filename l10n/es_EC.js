@@ -3,6 +3,13 @@ OC.L10N.register(
     {
     "Choose" : "Seleccionar",
     "Folder" : "Carpeta",
-    "Save" : "Guardar"
+    "Threshold" : "Límite",
+    "Select folder" : "Seleccionar carpeta",
+    "Days" : "Días",
+    "Create" : "Crear",
+    "Never" : "Nunca",
+    "Save" : "Guardar",
+    "Cancel" : "Cancelar",
+    "_%n day_::_%n days_" : ["%n día","%n días","%n días"]
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

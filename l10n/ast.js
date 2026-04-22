@@ -1,0 +1,13 @@
+OC.L10N.register(
+    "upload_monitor",
+    {
+    "Choose" : "Escoyer",
+    "Folder" : "Carpeta",
+    "Days" : "Díes",
+    "Create" : "Crear",
+    "Never" : "Enxamás",
+    "Save" : "Guardar",
+    "Cancel" : "Cancel",
+    "_%n day_::_%n days_" : ["%n día","%n díes"]
+},
+"nplurals=2; plural=(n != 1);");

@@ -1,0 +1,17 @@
+OC.L10N.register(
+    "upload_monitor",
+    {
+    "Invalid folder path" : "Μη έγκυρη διαδρομή φακέλου",
+    "Folder not found" : "Ο φάκελος δεν βρέθηκε",
+    "Choose" : "Επιλογή",
+    "Folder" : "Φάκελος",
+    "Threshold" : "Όριο",
+    "Select folder" : "Επιλογή φακέλου",
+    "Days" : "Ημέρες",
+    "Create" : "Δημιουργία",
+    "Never" : "Ποτέ",
+    "Save" : "Αποθήκευση",
+    "Cancel" : "Ακύρωση",
+    "_%n day_::_%n days_" : ["%n ημέρα","%n ημέρες"]
+},
+"nplurals=2; plural=(n != 1);");

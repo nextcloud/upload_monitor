@@ -1,0 +1,15 @@
+{ "translations": {
+    "Invalid folder path" : "Ruta de carpeta inválida",
+    "Folder not found" : "Carpeta no encontrada",
+    "Choose" : "Seleccione",
+    "Folder" : "Carpeta",
+    "Threshold" : "Umbral",
+    "Select folder" : "Selecciona carpeta",
+    "Days" : "Días",
+    "Create" : "Crear",
+    "Never" : "Nunca",
+    "Save" : "Guardar",
+    "Cancel" : "Cancelar",
+    "_%n day_::_%n days_" : ["%n día","%n días","%n días"]
+},"pluralForm" :"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
+}

@@ -6,8 +6,10 @@ OC.L10N.register(
     "Choose" : "選択",
     "Folder" : "フォルダー",
     "Select folder" : "フォルダーを選択",
+    "Create" : "作成",
     "Never" : "なし",
     "Save" : "保存する",
-    "Cancel" : "キャンセル"
+    "Cancel" : "キャンセル",
+    "_%n day_::_%n days_" : ["%n日"]
 },
 "nplurals=1; plural=0;");

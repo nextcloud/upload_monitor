@@ -9,6 +9,7 @@
     "Create" : "Opprett",
     "Never" : "Aldri",
     "Save" : "Lagre",
-    "Cancel" : "Cancel"
+    "Cancel" : "Cancel",
+    "_%n day_::_%n days_" : ["%n dag","%n dager"]
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
