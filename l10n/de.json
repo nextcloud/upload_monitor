@@ -10,7 +10,7 @@
     "Upload Monitor" : "Upload-Monitor",
     "No new files have been uploaded to %1$s since %2$s." : "Seit %2$s wurden keine neuen Dateien auf %1$s hochgeladen.",
     "No new files have been uploaded to %1$s since this rule was created (never detected)." : "Seit der Erstellung dieser Regel wurden keine neuen Dateien auf %1$s hochgeladen (nie erkannt).",
-    "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "Der überwachte Ordner %1$s existiert nicht mehr. Sie sollten diese Überwachungsregel entfernen.",
+    "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "Der überwachte Ordner %1$s existiert nicht mehr. Diese Überwachungsregel sollte entfernt werden.",
     "Monitor directories for upload inactivity" : "Verzeichnisse auf Upload-Inaktivität überwachen",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Verzeichnisse auf Inaktivität beim Hochladen von Dateien überwachen und Benachrichtigungen erhalten, wenn innerhalb eines konfigurierten Zeitraums keine neuen Dateien hochgeladen wurden.",
     "Failed to load watch rules" : "Überwachungsregeln konnten nicht geladen werden",
