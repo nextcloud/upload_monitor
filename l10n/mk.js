@@ -5,6 +5,7 @@ OC.L10N.register(
     "Folder not found" : "Папката не е пронајдена",
     "Choose" : "Избери",
     "Folder" : "Папка",
+    "Days" : "Дена",
     "Create" : "Креирај",
     "Never" : "Никогаш",
     "Save" : "Сними",
