@@ -7,6 +7,7 @@ OC.L10N.register(
     "Folder" : "Map",
     "Threshold" : "Drempelwaarde",
     "Select folder" : "Selecteer map",
+    "Days" : "Dagen",
     "Create" : "Creëer",
     "Never" : "Nooit",
     "Save" : "Opslaan",
