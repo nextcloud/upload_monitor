@@ -5,6 +5,7 @@ OC.L10N.register(
     "Folder not found" : "Kausta ei leidu",
     "Choose" : "Vali",
     "Folder" : "Kaust",
+    "Threshold" : "Lävend",
     "Select folder" : "Vali kaust",
     "Days" : "Päeva",
     "Create" : "Lisa",
