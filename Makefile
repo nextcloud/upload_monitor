@@ -18,7 +18,7 @@ composer=$(shell which composer 2> /dev/null)
 all: appstore
 
 # Dev env management
-dev-setup: clean
+dev-setup: clean npm-init
 
 # Installs and updates the composer dependencies. If composer is not installed
 # a copy is fetched from the web
@@ -35,6 +35,36 @@ else
 	composer update --prefer-dist
 endif
 
+npm-init:
+	npm ci
+
+npm-update:
+	npm update
+
+# Building
+build-js:
+	npm run dev
+
+build-js-production:
+	npm run build
+
+watch-js:
+	npm run watch
+
+# Linting
+lint:
+	npm run lint
+
+lint-fix:
+	npm run lint:fix
+
+# Style linting
+stylelint:
+	npm run stylelint
+
+stylelint-fix:
+	npm run stylelint:fix
+
 release: appstore create-tag
 
 create-tag:
@@ -43,8 +73,10 @@ create-tag:
 
 clean:
 	rm -rf $(build_dir)
+	rm -rf node_modules
+	rm -rf js
 
-appstore: dev-setup
+appstore: dev-setup build-js-production
 	mkdir -p $(sign_dir)
 	rsync -a \
 	--exclude=/.git \
@@ -57,6 +89,7 @@ appstore: dev-setup
 	--exclude=/tests \
 	--exclude=/vendor \
 	--exclude=/vendor-bin \
+	--exclude=/eslint.config.mjs \
 	--exclude=/.eslintrc.js \
 	--exclude=/.l10nignore \
 	--exclude=/.php-cs-fixer.cache \
@@ -74,6 +107,7 @@ appstore: dev-setup
 	--exclude=/psalm.xml \
 	--exclude=/README.md \
 	--exclude=/rector.php \
+	--exclude=/rspack.config.js \
 	--exclude=/stylelint.config.js \
 	--exclude=/webpack.js \
 	$(project_dir)/ $(sign_dir)/$(app_name)
