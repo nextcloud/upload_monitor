@@ -11,7 +11,7 @@ OC.L10N.register(
     "Threshold must be between 1 and %s days" : "Ní mór don tairseach a bheith idir 1 agus %s lá",
     "Upload Monitor" : "Monatóir Uaslódála",
     "No new files have been uploaded to %1$s since %2$s." : "Níl aon chomhaid nua uaslódáilte chuig %1$s ó %2$s.",
-    "No new files have been uploaded to %1$s since this rule was created (never detected)." : "No new files have been uploaded to %1$s since this rule was created (never detected).",
+    "No new files have been uploaded to %1$s since this rule was created (never detected)." : "Níor uaslódáladh aon chomhaid nua chuig %1$s ó cruthaíodh an riail seo (níor braitheadh ​​​​riamh).",
     "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "Níl an fillteán faire %1$s ann a thuilleadh. B’fhéidir gur mhaith leat an riail faire seo a bhaint.",
     "Monitor directories for upload inactivity" : "Monatóireacht a dhéanamh ar eolairí le haghaidh neamhghníomhaíochta uaslódála",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Déan monatóireacht ar eolairí le haghaidh neamhghníomhaíochta uaslódála comhad agus faigh fógraí nuair nach bhfuil aon chomhaid nua uaslódáilte laistigh de thréimhse ama cumraithe.",
