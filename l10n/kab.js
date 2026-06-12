@@ -4,7 +4,11 @@ OC.L10N.register(
     "Folder not found" : "Akaram ur yettwaf ara",
     "Choose" : "Fren",
     "Folder" : "Akaram",
+    "Threshold" : "Amnaṛ",
+    "Select folder" : "Fren akaram",
+    "Days" : "Ussan",
     "Create" : "Snulfu-d",
+    "Never" : "Weṛǧin",
     "Save" : "Sekles",
     "Cancel" : "Semmet"
 },
