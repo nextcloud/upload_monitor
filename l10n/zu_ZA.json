@@ -1,7 +1,4 @@
 { "translations": {
-    "Choose" : "Eslechir",
-    "Create" : "Crear",
-    "Never" : "Nunca",
     "Save" : "Save",
     "Cancel" : "Cancel"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"

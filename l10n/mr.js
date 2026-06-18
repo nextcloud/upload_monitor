@@ -1,10 +1,7 @@
 OC.L10N.register(
     "upload_monitor",
     {
-    "Choose" : "Eslechir",
-    "Create" : "Crear",
-    "Never" : "Nunca",
     "Save" : "Save",
-    "Cancel" : "Cancel"
+    "Cancel" : "रद्द करा"
 },
 "nplurals=2; plural=(n != 1);");

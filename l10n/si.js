@@ -6,6 +6,7 @@ OC.L10N.register(
     "Select folder" : "බහාලුම තෝරන්න",
     "Days" : "දින",
     "Create" : "සාදන්න",
+    "Save" : "Save",
     "Cancel" : "Cancel",
     "_%n day_::_%n days_" : ["දින %n යි","දින %n යි"]
 },
