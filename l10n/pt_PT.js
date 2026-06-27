@@ -5,6 +5,7 @@ OC.L10N.register(
     "Folder not found" : "Pasta não encontrada",
     "Choose" : "Escolher",
     "Folder" : "Pasta",
+    "Days" : "Dias",
     "Create" : "Criar",
     "Never" : "Nunca",
     "Save" : "Guardar",

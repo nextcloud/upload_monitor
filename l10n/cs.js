@@ -3,9 +3,11 @@ OC.L10N.register(
     {
     "Invalid folder path" : "Neplatný popis umístění složky",
     "Folder not found" : "Složka nenalezena",
+    "Upload Monitor" : "Monitor nahrávání",
     "Choose" : "Vybrat",
     "Folder" : "Složka",
     "Threshold" : "Práh",
+    "Last upload" : "Poslední nahrání",
     "Select folder" : "Vyberte složku",
     "Days" : "Dny",
     "Create" : "Vytvářet",
