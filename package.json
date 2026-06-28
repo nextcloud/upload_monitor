@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Monitor directories for upload inactivity",
-  "license": "agpl",
+  "license": "AGPL-3.0-or-later",
   "scripts": {
     "build": "rspack build --env production",
     "dev": "rspack build --env development",
