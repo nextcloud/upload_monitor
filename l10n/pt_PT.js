@@ -6,6 +6,7 @@ OC.L10N.register(
     "Choose" : "Escolher",
     "Folder" : "Pasta",
     "Threshold" : "Limite",
+    "Select folder" : "Selecionar pasta",
     "Days" : "Dias",
     "Create" : "Criar",
     "Never" : "Nunca",
