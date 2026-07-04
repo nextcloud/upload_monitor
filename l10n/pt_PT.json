@@ -1,4 +1,5 @@
 { "translations": {
+    "Folder path is too long" : "O caminho da pasta é muito longo",
     "Invalid folder path" : "Caminho da pasta inválido",
     "Selected path is not a folder" : "O caminho selecionado não é uma pasta",
     "Folder not found" : "Pasta não encontrada",
@@ -12,9 +13,11 @@
     "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "A pasta monitorada %1$s não existe mais. Recomendamos que você remova essa regra de monitoramento.",
     "Monitor directories for upload inactivity" : "Monitore diretórios em busca de inatividade no upload",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Monitore diretórios para detectar inatividade no upload de arquivos e receba notificações quando nenhum novo arquivo for enviado dentro de um período de tempo configurado.",
+    "Failed to load watch rules" : "Falha ao carregar as regras de monitoramento",
     "Select folder to watch" : "Selecione a pasta para monitorar",
     "Choose" : "Escolher",
     "Provide a valid folder and threshold" : "Especifique uma pasta e um limite válidos",
+    "Failed to add watch rule" : "Falha ao adicionar regra de monitoramento",
     "Failed to update watch rule" : "Falha ao atualizar a regra de monitoramento",
     "Failed to remove watch rule" : "Falha ao remover a regra de monitoramento",
     "Monitor folders for file upload inactivity and receive notifications." : "Monitore pastas para detectar inatividade no upload de arquivos e receba notificações.",
