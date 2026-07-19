@@ -5,7 +5,7 @@ OC.L10N.register(
     "Folder not found" : "Mappen hittades inte",
     "Choose" : "Välj",
     "Folder" : "Mapp",
-    "Threshold" : "Tröskelvärden",
+    "Threshold" : "Tröskelvärde",
     "Select folder" : "Välj mapp",
     "Days" : "Dagar",
     "Create" : "Skapa",
