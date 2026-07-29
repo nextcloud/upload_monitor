@@ -3,9 +3,11 @@ OC.L10N.register(
     {
     "Invalid folder path" : "Kausta vigane asukoht",
     "Folder not found" : "Kausta ei leidu",
+    "Upload Monitor" : "Üleslaadimise monitooring",
     "Choose" : "Vali",
     "Folder" : "Kaust",
     "Threshold" : "Lävend",
+    "Last upload" : "Viimati üleslaaditud",
     "Select folder" : "Vali kaust",
     "Days" : "Päeva",
     "Create" : "Lisa",
