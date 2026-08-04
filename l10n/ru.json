@@ -4,7 +4,7 @@
     "Selected path is not a folder" : "Выбранный путь не содержит папку",
     "Folder not found" : "Папка не найдена",
     "A watch rule for this folder already exists" : "Правила просмотра для этой папки уже созданы",
-    "Maximum number of watch rules reached" : "Достигнуто максимальное количество правил просиотра",
+    "Maximum number of watch rules reached" : "Достигнуто максимальное количество правил просмотра",
     "Rule not found" : "Правило не найдено",
     "Threshold must be between 1 and %s days" : "Интервал должен быть от 1 до %s дней",
     "Upload Monitor" : "Просмотр загрузок",
