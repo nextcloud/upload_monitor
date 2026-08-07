@@ -1,6 +1,9 @@
 { "translations": {
     "Choose" : "Vel",
     "Folder" : "Mappe",
+    "Days" : "Dagar",
+    "Create" : "Opprett",
+    "Never" : "Aldri",
     "Save" : "Lagre",
     "Cancel" : "Cancel"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"

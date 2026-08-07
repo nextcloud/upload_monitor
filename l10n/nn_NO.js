@@ -3,6 +3,9 @@ OC.L10N.register(
     {
     "Choose" : "Vel",
     "Folder" : "Mappe",
+    "Days" : "Dagar",
+    "Create" : "Opprett",
+    "Never" : "Aldri",
     "Save" : "Lagre",
     "Cancel" : "Cancel"
 },
