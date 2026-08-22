@@ -1,6 +1,8 @@
 OC.L10N.register(
     "upload_monitor",
     {
+    "Invalid folder path" : "Cale de fișier nevalidă",
+    "Folder not found" : "Dosarul nu a fost găsit",
     "Choose" : "Alege",
     "Folder" : "Director",
     "Create" : "Crează",
