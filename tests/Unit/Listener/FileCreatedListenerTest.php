@@ -22,6 +22,8 @@ use OCP\Files\Folder;
 use OCP\ICache;
 use OCP\ICacheFactory;
 use OCP\IUser;
+use OCP\Notification\IManager as INotificationManager;
+use OCP\Notification\INotification;
 use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Log\LoggerInterface;
 use Test\TestCase;
@@ -30,6 +32,7 @@ class FileCreatedListenerTest extends TestCase {
 	private RuleMapper&MockObject $ruleMapper;
 	private ITimeFactory&MockObject $timeFactory;
 	private IUserMountCache&MockObject $userMountCache;
+	private INotificationManager&MockObject $notificationManager;
 	private ICache&MockObject $cache;
 	private FileCreatedListener $listener;
 
@@ -40,6 +43,7 @@ class FileCreatedListenerTest extends TestCase {
 		$this->timeFactory = $this->createMock(ITimeFactory::class);
 		$this->timeFactory->method('getTime')->willReturn(1000000);
 		$this->userMountCache = $this->createMock(IUserMountCache::class);
+		$this->notificationManager = $this->createMock(INotificationManager::class);
 		$this->cache = $this->createMock(ICache::class);
 
 		$cacheFactory = $this->createMock(ICacheFactory::class);
@@ -50,6 +54,7 @@ class FileCreatedListenerTest extends TestCase {
 			$this->timeFactory,
 			$this->createMock(LoggerInterface::class),
 			$this->userMountCache,
+			$this->notificationManager,
 			$cacheFactory,
 		);
 	}
@@ -83,6 +88,81 @@ class FileCreatedListenerTest extends TestCase {
 		$this->ruleMapper->expects($this->once())
 			->method('updateLastUploadAt')
 			->with('rule1', 1000000);
+
+		$this->listener->handle($event);
+	}
+
+	public function testDismissesNotificationOfWatchedDirectory(): void {
+		$file = $this->createMock(File::class);
+		$file->method('getPath')->willReturn('/alice/files/Photos/vacation/pic.jpg');
+
+		$event = $this->createMock(NodeCreatedEvent::class);
+		$event->method('getNode')->willReturn($file);
+
+		$this->cache->method('get')->willReturn(null);
+
+		$rule = $this->createRule('rule1', 'alice', '/Photos');
+		$this->ruleMapper->method('findAll')->willReturn([$rule]);
+
+		$notification = $this->createMock(INotification::class);
+		$notification->expects($this->once())->method('setApp')->with('upload_monitor')->willReturnSelf();
+		$notification->expects($this->once())->method('setUser')->with('alice')->willReturnSelf();
+		$notification->expects($this->once())->method('setObject')->with('rule', 'rule1')->willReturnSelf();
+
+		$this->notificationManager->method('createNotification')->willReturn($notification);
+		$this->notificationManager->expects($this->once())
+			->method('markProcessed')
+			->with($notification);
+
+		$this->listener->handle($event);
+	}
+
+	public function testDismissesNotificationForUploadOfOtherUser(): void {
+		$file = $this->createMock(File::class);
+		$file->method('getPath')->willReturn('/bob/files/Alices Photos/pic.jpg');
+		$file->method('getId')->willReturn(42);
+
+		$event = $this->createMock(NodeCreatedEvent::class);
+		$event->method('getNode')->willReturn($file);
+
+		$this->cache->method('get')->willReturn(null);
+
+		$rule = $this->createRule('rule1', 'alice', '/Photos');
+		$this->ruleMapper->method('findAll')->willReturn([$rule]);
+
+		$this->userMountCache->method('getMountsForFileId')
+			->with(42)
+			->willReturn([
+				$this->createMountInfo('bob', '/bob/files/Alices Photos/pic.jpg'),
+				$this->createMountInfo('alice', '/alice/files/Photos/pic.jpg'),
+			]);
+
+		$notification = $this->createMock(INotification::class);
+		$notification->method('setApp')->willReturnSelf();
+		$notification->expects($this->once())->method('setUser')->with('alice')->willReturnSelf();
+		$notification->expects($this->once())->method('setObject')->with('rule', 'rule1')->willReturnSelf();
+
+		$this->notificationManager->method('createNotification')->willReturn($notification);
+		$this->notificationManager->expects($this->once())
+			->method('markProcessed')
+			->with($notification);
+
+		$this->listener->handle($event);
+	}
+
+	public function testDoesNotDismissNotificationOfUnrelatedDirectory(): void {
+		$file = $this->createMock(File::class);
+		$file->method('getPath')->willReturn('/alice/files/Documents/report.pdf');
+
+		$event = $this->createMock(NodeCreatedEvent::class);
+		$event->method('getNode')->willReturn($file);
+
+		$this->cache->method('get')->willReturn(null);
+
+		$rule = $this->createRule('rule1', 'alice', '/Photos');
+		$this->ruleMapper->method('findAll')->willReturn([$rule]);
+
+		$this->notificationManager->expects($this->never())->method('markProcessed');
 
 		$this->listener->handle($event);
 	}

@@ -76,11 +76,15 @@ class RuleMapper extends QBMapper {
 
 	/**
 	 * Update last_upload_at for a rule.
+	 *
+	 * Also resets last_notified_at, as the rule is no longer inactive and therefore
+	 * should be notified about again as soon as the threshold is exceeded the next time.
 	 */
 	public function updateLastUploadAt(string $id, int $timestamp): void {
 		$qb = $this->db->getQueryBuilder();
 		$qb->update($this->getTableName())
 			->set('last_upload_at', $qb->createNamedParameter($timestamp, IQueryBuilder::PARAM_INT))
+			->set('last_notified_at', $qb->createNamedParameter(null, IQueryBuilder::PARAM_NULL))
 			->where($qb->expr()->eq('id', $qb->createNamedParameter($id)));
 		$qb->executeStatement();
 	}

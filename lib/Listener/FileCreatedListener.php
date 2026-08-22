@@ -19,6 +19,7 @@ use OCP\Files\Events\Node\NodeCreatedEvent;
 use OCP\Files\File;
 use OCP\ICache;
 use OCP\ICacheFactory;
+use OCP\Notification\IManager as INotificationManager;
 use Override;
 use Psr\Log\LoggerInterface;
 
@@ -33,6 +34,7 @@ class FileCreatedListener implements IEventListener {
 		private ITimeFactory $timeFactory,
 		private LoggerInterface $logger,
 		private IUserMountCache $userMountCache,
+		private INotificationManager $notificationManager,
 		ICacheFactory $cacheFactory,
 	) {
 		$this->cache = $cacheFactory->createDistributed(Application::APP_ID);
@@ -76,7 +78,7 @@ class FileCreatedListener implements IEventListener {
 			// The watched directory is like /Photos
 			// We need to check if the file is inside /<userId>/files/<watchedDir>
 			if ($this->isWatched($filePath, $userId, $rule['directoryPath'])) {
-				$this->ruleMapper->updateLastUploadAt($rule['id'], $now);
+				$this->recordUpload($rule, $now);
 				continue;
 			}
 
@@ -93,11 +95,28 @@ class FileCreatedListener implements IEventListener {
 
 			foreach ($pathsByUser[$userId] ?? [] as $userPath) {
 				if ($this->isWatched($userPath, $userId, $rule['directoryPath'])) {
-					$this->ruleMapper->updateLastUploadAt($rule['id'], $now);
+					$this->recordUpload($rule, $now);
 					break;
 				}
 			}
 		}
+	}
+
+	/**
+	 * Remember the upload and dismiss a pending notification about the rule,
+	 * as the watched directory received a file again.
+	 *
+	 * @param array{id: string, userId: string, directoryPath: string} $rule
+	 */
+	private function recordUpload(array $rule, int $now): void {
+		$this->ruleMapper->updateLastUploadAt($rule['id'], $now);
+
+		$notification = $this->notificationManager->createNotification();
+		$notification->setApp(Application::APP_ID)
+			->setUser($rule['userId'])
+			->setObject('rule', $rule['id']);
+
+		$this->notificationManager->markProcessed($notification);
 	}
 
 	/**
