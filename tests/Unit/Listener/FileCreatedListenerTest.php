@@ -14,11 +14,14 @@ use OCA\UploadMonitor\Db\RuleMapper;
 use OCA\UploadMonitor\Listener\FileCreatedListener;
 use OCP\AppFramework\Utility\ITimeFactory;
 use OCP\EventDispatcher\Event;
+use OCP\Files\Config\ICachedMountFileInfo;
+use OCP\Files\Config\IUserMountCache;
 use OCP\Files\Events\Node\NodeCreatedEvent;
 use OCP\Files\File;
 use OCP\Files\Folder;
 use OCP\ICache;
 use OCP\ICacheFactory;
+use OCP\IUser;
 use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Log\LoggerInterface;
 use Test\TestCase;
@@ -26,6 +29,7 @@ use Test\TestCase;
 class FileCreatedListenerTest extends TestCase {
 	private RuleMapper&MockObject $ruleMapper;
 	private ITimeFactory&MockObject $timeFactory;
+	private IUserMountCache&MockObject $userMountCache;
 	private ICache&MockObject $cache;
 	private FileCreatedListener $listener;
 
@@ -35,6 +39,7 @@ class FileCreatedListenerTest extends TestCase {
 		$this->ruleMapper = $this->createMock(RuleMapper::class);
 		$this->timeFactory = $this->createMock(ITimeFactory::class);
 		$this->timeFactory->method('getTime')->willReturn(1000000);
+		$this->userMountCache = $this->createMock(IUserMountCache::class);
 		$this->cache = $this->createMock(ICache::class);
 
 		$cacheFactory = $this->createMock(ICacheFactory::class);
@@ -44,6 +49,7 @@ class FileCreatedListenerTest extends TestCase {
 			$this->ruleMapper,
 			$this->timeFactory,
 			$this->createMock(LoggerInterface::class),
+			$this->userMountCache,
 			$cacheFactory,
 		);
 	}
@@ -118,6 +124,7 @@ class FileCreatedListenerTest extends TestCase {
 	public function testDoesNotMatchOtherUsersRule(): void {
 		$file = $this->createMock(File::class);
 		$file->method('getPath')->willReturn('/alice/files/Photos/pic.jpg');
+		$file->method('getId')->willReturn(42);
 
 		$event = $this->createMock(NodeCreatedEvent::class);
 		$event->method('getNode')->willReturn($file);
@@ -127,6 +134,131 @@ class FileCreatedListenerTest extends TestCase {
 		$rule = $this->createRule('rule1', 'bob', '/Photos');
 		$this->ruleMapper->method('findAll')->willReturn([$rule]);
 
+		// The file is not available to bob at all
+		$this->userMountCache->method('getMountsForFileId')
+			->with(42)
+			->willReturn([$this->createMountInfo('alice', '/alice/files/Photos/pic.jpg')]);
+
+		$this->ruleMapper->expects($this->never())->method('updateLastUploadAt');
+
+		$this->listener->handle($event);
+	}
+
+	public function testMatchesUploadOfOtherUserIntoSharedFolder(): void {
+		// bob uploaded into a folder that alice shared with him
+		$file = $this->createMock(File::class);
+		$file->method('getPath')->willReturn('/bob/files/Alices Photos/pic.jpg');
+		$file->method('getId')->willReturn(42);
+
+		$event = $this->createMock(NodeCreatedEvent::class);
+		$event->method('getNode')->willReturn($file);
+
+		$this->cache->method('get')->willReturn(null);
+
+		$rule = $this->createRule('rule1', 'alice', '/Photos');
+		$this->ruleMapper->method('findAll')->willReturn([$rule]);
+
+		$this->userMountCache->method('getMountsForFileId')
+			->with(42)
+			->willReturn([
+				$this->createMountInfo('bob', '/bob/files/Alices Photos/pic.jpg'),
+				$this->createMountInfo('alice', '/alice/files/Photos/pic.jpg'),
+			]);
+
+		$this->ruleMapper->expects($this->once())
+			->method('updateLastUploadAt')
+			->with('rule1', 1000000);
+
+		$this->listener->handle($event);
+	}
+
+	public function testDoesNotMatchUploadOfOtherUserOutsideWatchedDirectory(): void {
+		$file = $this->createMock(File::class);
+		$file->method('getPath')->willReturn('/bob/files/Alices Documents/report.pdf');
+		$file->method('getId')->willReturn(42);
+
+		$event = $this->createMock(NodeCreatedEvent::class);
+		$event->method('getNode')->willReturn($file);
+
+		$this->cache->method('get')->willReturn(null);
+
+		$rule = $this->createRule('rule1', 'alice', '/Photos');
+		$this->ruleMapper->method('findAll')->willReturn([$rule]);
+
+		$this->userMountCache->method('getMountsForFileId')
+			->with(42)
+			->willReturn([
+				$this->createMountInfo('bob', '/bob/files/Alices Documents/report.pdf'),
+				$this->createMountInfo('alice', '/alice/files/Documents/report.pdf'),
+			]);
+
+		$this->ruleMapper->expects($this->never())->method('updateLastUploadAt');
+
+		$this->listener->handle($event);
+	}
+
+	public function testDoesNotResolveMountsForOwnNamespace(): void {
+		$file = $this->createMock(File::class);
+		$file->method('getPath')->willReturn('/alice/files/Documents/report.pdf');
+		$file->method('getId')->willReturn(42);
+
+		$event = $this->createMock(NodeCreatedEvent::class);
+		$event->method('getNode')->willReturn($file);
+
+		$this->cache->method('get')->willReturn(null);
+
+		$rule = $this->createRule('rule1', 'alice', '/Photos');
+		$this->ruleMapper->method('findAll')->willReturn([$rule]);
+
+		// The path is already in alice's namespace, so there is nothing to resolve
+		$this->userMountCache->expects($this->never())->method('getMountsForFileId');
+		$this->ruleMapper->expects($this->never())->method('updateLastUploadAt');
+
+		$this->listener->handle($event);
+	}
+
+	public function testResolvesMountsOnlyOnceForMultipleRules(): void {
+		$file = $this->createMock(File::class);
+		$file->method('getPath')->willReturn('/bob/files/Alices Photos/pic.jpg');
+		$file->method('getId')->willReturn(42);
+
+		$event = $this->createMock(NodeCreatedEvent::class);
+		$event->method('getNode')->willReturn($file);
+
+		$this->cache->method('get')->willReturn(null);
+
+		$this->ruleMapper->method('findAll')->willReturn([
+			$this->createRule('rule1', 'alice', '/Photos'),
+			$this->createRule('rule2', 'alice', '/Photos/2026'),
+			$this->createRule('rule3', 'carol', '/Photos'),
+		]);
+
+		$this->userMountCache->expects($this->once())
+			->method('getMountsForFileId')
+			->with(42)
+			->willReturn([
+				$this->createMountInfo('bob', '/bob/files/Alices Photos/pic.jpg'),
+				$this->createMountInfo('alice', '/alice/files/Photos/pic.jpg'),
+			]);
+
+		$this->ruleMapper->expects($this->once())
+			->method('updateLastUploadAt')
+			->with('rule1', 1000000);
+
+		$this->listener->handle($event);
+	}
+
+	public function testSkipsMountLookupWithoutRules(): void {
+		$file = $this->createMock(File::class);
+		$file->method('getPath')->willReturn('/bob/files/Alices Photos/pic.jpg');
+
+		$event = $this->createMock(NodeCreatedEvent::class);
+		$event->method('getNode')->willReturn($file);
+
+		$this->cache->method('get')->willReturn(null);
+		$this->ruleMapper->method('findAll')->willReturn([]);
+
+		$this->userMountCache->expects($this->never())->method('getMountsForFileId');
 		$this->ruleMapper->expects($this->never())->method('updateLastUploadAt');
 
 		$this->listener->handle($event);
@@ -148,6 +280,16 @@ class FileCreatedListenerTest extends TestCase {
 		$this->ruleMapper->expects($this->once())->method('updateLastUploadAt');
 
 		$this->listener->handle($event);
+	}
+
+	private function createMountInfo(string $userId, string $path): ICachedMountFileInfo&MockObject {
+		$user = $this->createMock(IUser::class);
+		$user->method('getUID')->willReturn($userId);
+
+		$mountInfo = $this->createMock(ICachedMountFileInfo::class);
+		$mountInfo->method('getUser')->willReturn($user);
+		$mountInfo->method('getPath')->willReturn($path);
+		return $mountInfo;
 	}
 
 	private function createRule(string $id, string $userId, string $path): Rule {
