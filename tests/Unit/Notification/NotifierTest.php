@@ -11,6 +11,7 @@ namespace OCA\UploadMonitor\Tests\Unit\Notification;
 
 use OCA\UploadMonitor\Notification\Notifier;
 use OCP\IL10N;
+use OCP\IURLGenerator;
 use OCP\L10N\IFactory;
 use OCP\Notification\INotification;
 use OCP\Notification\UnknownNotificationException;
@@ -20,6 +21,7 @@ use Test\TestCase;
 class NotifierTest extends TestCase {
 	private IFactory&MockObject $l10nFactory;
 	private IL10N&MockObject $l;
+	private IURLGenerator&MockObject $urlGenerator;
 	private Notifier $notifier;
 
 	protected function setUp(): void {
@@ -30,7 +32,14 @@ class NotifierTest extends TestCase {
 		$this->l10nFactory = $this->createMock(IFactory::class);
 		$this->l10nFactory->method('get')->willReturn($this->l);
 
-		$this->notifier = new Notifier($this->l10nFactory);
+		$this->urlGenerator = $this->createMock(IURLGenerator::class);
+		$this->urlGenerator->method('imagePath')
+			->with('upload_monitor', 'app-dark.svg')
+			->willReturn('/apps/upload_monitor/img/app-dark.svg');
+		$this->urlGenerator->method('getAbsoluteURL')
+			->willReturnCallback(fn (string $path) => 'https://localhost' . $path);
+
+		$this->notifier = new Notifier($this->l10nFactory, $this->urlGenerator);
 	}
 
 	public function testGetID(): void {
@@ -64,7 +73,13 @@ class NotifierTest extends TestCase {
 			'lastUploadAt' => 1700000000,
 		]);
 		$notification->expects($this->once())->method('setParsedSubject')
-			->with($this->stringContains('/Photos'))
+			->with('No new uploads in /Photos')
+			->willReturnSelf();
+		$notification->expects($this->once())->method('setParsedMessage')
+			->with($this->stringContains('2023-11-14'))
+			->willReturnSelf();
+		$notification->expects($this->once())->method('setIcon')
+			->with('https://localhost/apps/upload_monitor/img/app-dark.svg')
 			->willReturnSelf();
 
 		$result = $this->notifier->prepare($notification, 'en');
@@ -81,8 +96,12 @@ class NotifierTest extends TestCase {
 			'createdAt' => null,
 		]);
 		$notification->expects($this->once())->method('setParsedSubject')
+			->with('No new uploads in /Photos')
+			->willReturnSelf();
+		$notification->expects($this->once())->method('setParsedMessage')
 			->with($this->stringContains('never detected'))
 			->willReturnSelf();
+		$notification->expects($this->once())->method('setIcon')->willReturnSelf();
 
 		$this->notifier->prepare($notification, 'en');
 	}
@@ -95,8 +114,12 @@ class NotifierTest extends TestCase {
 			'path' => '/Deleted',
 		]);
 		$notification->expects($this->once())->method('setParsedSubject')
+			->with('Watched folder /Deleted no longer exists')
+			->willReturnSelf();
+		$notification->expects($this->once())->method('setParsedMessage')
 			->with($this->stringContains('/Deleted'))
 			->willReturnSelf();
+		$notification->expects($this->once())->method('setIcon')->willReturnSelf();
 
 		$this->notifier->prepare($notification, 'en');
 	}

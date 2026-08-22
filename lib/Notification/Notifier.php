@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace OCA\UploadMonitor\Notification;
 
 use OCA\UploadMonitor\AppInfo\Application;
+use OCP\IURLGenerator;
 use OCP\L10N\IFactory;
 use OCP\Notification\INotification;
 use OCP\Notification\INotifier;
@@ -19,6 +20,7 @@ use Override;
 class Notifier implements INotifier {
 	public function __construct(
 		private IFactory $l10nFactory,
+		private IURLGenerator $urlGenerator,
 	) {
 	}
 
@@ -46,14 +48,18 @@ class Notifier implements INotifier {
 				$path = $params['path'];
 				$lastUploadAt = $params['lastUploadAt'] ?? $params['createdAt'];
 
+				$notification->setParsedSubject(
+					$l->t('No new uploads in %1$s', [$path])
+				);
+
 				if ($lastUploadAt !== null) {
 					$date = new \DateTime('@' . $lastUploadAt);
 					$dateStr = $date->format('Y-m-d');
-					$notification->setParsedSubject(
+					$notification->setParsedMessage(
 						$l->t('No new files have been uploaded to %1$s since %2$s.', [$path, $dateStr])
 					);
 				} else {
-					$notification->setParsedSubject(
+					$notification->setParsedMessage(
 						$l->t('No new files have been uploaded to %1$s since this rule was created (never detected).', [$path])
 					);
 				}
@@ -62,13 +68,20 @@ class Notifier implements INotifier {
 			case 'directory_missing':
 				$path = $params['path'];
 				$notification->setParsedSubject(
-					$l->t('Watched folder %1$s no longer exists. You may want to remove this watch rule.', [$path])
+					$l->t('Watched folder %1$s no longer exists', [$path])
+				);
+				$notification->setParsedMessage(
+					$l->t('The folder %1$s could not be found anymore. You may want to remove this watch rule.', [$path])
 				);
 				break;
 
 			default:
 				throw new UnknownNotificationException();
 		}
+
+		$notification->setIcon(
+			$this->urlGenerator->getAbsoluteURL($this->urlGenerator->imagePath(Application::APP_ID, 'app-dark.svg'))
+		);
 
 		return $notification;
 	}
