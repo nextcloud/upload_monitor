@@ -12,7 +12,6 @@ OC.L10N.register(
     "Upload Monitor" : "Yükleme izleyici",
     "No new files have been uploaded to %1$s since %2$s." : "%1$s üzerine %2$s zamanından beri yeni bir dosya yüklenmemiş.",
     "No new files have been uploaded to %1$s since this rule was created (never detected)." : "%1$s üzerine bu kural oluşturulduktan sonra yeni bir dosya yüklenmemiş (asla algılanmamış).",
-    "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "%1$s izlenen klasörü artık yok. Bu izleme kuralını kaldırmak isteyebilirsiniz.",
     "Monitor directories for upload inactivity" : "Yükleme hareketsizliği için klasörleri izleyin",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Dosya yükleme hareketsizliği için klasörleri izleyin ve yapılandırılmış bir süre içinde yeni dosya yüklenmediğinde bildirimler alın.",
     "Failed to load watch rules" : "İzleme kuralları yüklenemedi",

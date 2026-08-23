@@ -12,7 +12,6 @@ OC.L10N.register(
     "Upload Monitor" : "نظارت بر آپلود",
     "No new files have been uploaded to %1$s since %2$s." : "از %2$s تاکنون فایل جدیدی به %1$s آپلود نشده است.",
     "No new files have been uploaded to %1$s since this rule was created (never detected)." : "از زمان ایجاد این قانون (هرگز شناسایی نشده) فایل جدیدی به %1$s آپلود نشده است.",
-    "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "پوشه تحت نظارت %1$s دیگر وجود ندارد. بهتر است این قانون نظارت را حذف کنید.",
     "Monitor directories for upload inactivity" : "نظارت بر پوشه‌ها برای عدم فعالیت آپلود",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "نظارت بر پوشه‌ها برای عدم فعالیت آپلود فایل و دریافت اعلان‌ها در صورت عدم آپلود فایل جدید در بازه زمانی مشخص.",
     "Failed to load watch rules" : "بارگذاری قوانین نظارت با شکست مواجه شد",

@@ -10,7 +10,6 @@
     "Upload Monitor" : "Moniteur de téléversements",
     "No new files have been uploaded to %1$s since %2$s." : "Aucun nouveau fichier n'a été téléversé vers %1$s depuis %2$s.",
     "No new files have been uploaded to %1$s since this rule was created (never detected)." : "Aucun nouveau fichier n'a été téléversé vers %1$s depuis la création de cette règle (jamais de détection).",
-    "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "Le dossier surveillé %1$s n'existe plus. Vous pouvez supprimer cette règle de surveillance.",
     "Monitor directories for upload inactivity" : "Surveillance de l'inactivité de téléversements dans des dossiers",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Surveiller l'inactivité de téléversements dans des dossiers et recevoir des notifications lorsqu'aucun nouveau fichier n'a été téléversé pendant une durée déterminée.",
     "Failed to load watch rules" : "Échec du chargement des règles de surveillance",

@@ -12,7 +12,6 @@ OC.L10N.register(
     "Upload Monitor" : "Upload Monitor",
     "No new files have been uploaded to %1$s since %2$s." : "No new files have been uploaded to %1$s since %2$s.",
     "No new files have been uploaded to %1$s since this rule was created (never detected)." : "No new files have been uploaded to %1$s since this rule was created (never detected).",
-    "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "Watched folder %1$s no longer exists. You may want to remove this watch rule.",
     "Monitor directories for upload inactivity" : "Monitor directories for upload inactivity",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period.",
     "Failed to load watch rules" : "Failed to load watch rules",

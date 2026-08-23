@@ -10,7 +10,6 @@
     "Upload Monitor" : "上傳監視器",
     "No new files have been uploaded to %1$s since %2$s." : "自 %2$s 起，尚無新檔案上傳至 %1$s。",
     "No new files have been uploaded to %1$s since this rule was created (never detected)." : "自此規則建立起，尚無新檔案上傳至 %1$s（從未偵測到）。",
-    "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "監控的 %1$s 資料夾已不存在。您可能會想要移除此監控規則。",
     "Monitor directories for upload inactivity" : "監控目錄以偵測無上傳活動的狀況",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "監控目錄以偵測檔案上傳活動停滯，並在設定的時間範圍內未上傳新檔案時接收通知。",
     "Failed to load watch rules" : "載入監控規則失敗",

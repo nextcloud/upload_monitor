@@ -10,7 +10,6 @@
     "Upload Monitor" : "Įkėlimo stebėjimas",
     "No new files have been uploaded to %1$s since %2$s." : "Nuo %2$s į %1$s nebuvo įkelta jokių naujų failų.",
     "No new files have been uploaded to %1$s since this rule was created (never detected)." : "Nuo šios taisyklės sukūrimo nebuvo įkelta į %1$s jokių naujų failų (niekada neaptikta).",
-    "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "Stebimo aplanko%1$s nebėra. Galbūt norėsite pašalinti šią stebėjimo taisyklę.",
     "Monitor directories for upload inactivity" : "Katalogų įkėlimo neaktyvumo stebėjimas",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Stebėkite katalogus dėl failų įkėlimo neaktyvumo ir gaukite pranešimus, kai per sukonfigūruotą laikotarpį nebuvo įkelti naujų failų.",
     "Failed to load watch rules" : "Nepavyko įkelti stebėjimo taisyklių",

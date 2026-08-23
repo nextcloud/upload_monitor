@@ -12,7 +12,6 @@ OC.L10N.register(
     "Upload Monitor" : "Monitor przesyłania",
     "No new files have been uploaded to %1$s since %2$s." : "Nie przesłano żadnych nowych plików do %1$s od %2$s.",
     "No new files have been uploaded to %1$s since this rule was created (never detected)." : "Nie przesłano żadnych nowych plików do %1$s od momentu utworzenia tej reguły (nigdy nie wykryto)",
-    "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "Monitorowany folder %1$s już nie istnieje. Możesz chcieć usunąć tę regułę monitorowania.",
     "Monitor directories for upload inactivity" : "Monitoruj katalogi pod kątem braku przesyłania plików",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Monitoruj katalogi pod kątem braku przesyłania plików i otrzymuj powiadomienia, gdy w określonym czasie nie zostaną przesłane nowe pliki.",
     "Failed to load watch rules" : "Nie udało się wczytać reguł monitorowania",

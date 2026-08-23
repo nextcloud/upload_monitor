@@ -10,7 +10,6 @@
     "Upload Monitor" : "Yuklash monitori",
     "No new files have been uploaded to %1$s since %2$s." : "%2$s dan beri %1$s ga yangi fayllar yuklanmadi.",
     "No new files have been uploaded to %1$s since this rule was created (never detected)." : "Ushbu qoida yaratilganidan beri (hech qachon aniqlanmagan) %1$s ga yangi fayllar yuklanmadi.",
-    "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "Kuzatilayotgan %1$s papkasi endi mavjud emas. Ushbu kuzatish qoidasini olib tashlashingiz mumkin.",
     "Monitor directories for upload inactivity" : "Yuklash faolsizligi uchun kataloglarni kuzatib boring",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Fayllarni yuklashdagi faolsizliklar uchun kataloglarni kuzatib boring va belgilangan vaqt ichida yangi fayllar yuklanmaganida bildirishnomalarni oling.",
     "Failed to load watch rules" : "Kuzatuv qoidalarini yuklashda xatolik yuz berdi",

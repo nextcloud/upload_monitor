@@ -12,7 +12,6 @@ OC.L10N.register(
     "Upload Monitor" : "Uppladdningsövervakning",
     "No new files have been uploaded to %1$s since %2$s." : "Inga nya filer har laddats upp till %1$s sedan %2$s.",
     "No new files have been uploaded to %1$s since this rule was created (never detected)." : "Inga nya filer har laddats upp till %1$s sedan regeln skapades (ingen uppladdning har identifierats).",
-    "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "Den bevakade mappen %1$s finns inte längre. Du bör kanske ta bort bevakningsregeln.",
     "Monitor directories for upload inactivity" : "Övervaka mappar för uteblivna uppladdningar",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Övervaka mappar för uteblivna filuppladdningar och få aviseringar när inga nya filer har laddats upp inom en angiven tidsperiod.",
     "Failed to load watch rules" : "Det gick inte att läsa in bevakningsregler",

@@ -10,7 +10,6 @@
     "Upload Monitor" : "Просмотр загрузок",
     "No new files have been uploaded to %1$s since %2$s." : "Новые файлы не загружались в %1$s с %2$s.",
     "No new files have been uploaded to %1$s since this rule was created (never detected)." : "С момента создания этого правила новые файлы не загружались в %1$s (никогда не обнаруживались).",
-    "Watched folder %1$s no longer exists. You may want to remove this watch rule." : "Просматриваемая папка %1$s больше не существует. Возможно, вы захотите удалить это правило наблюдения.",
     "Monitor directories for upload inactivity" : "Мониторинг каталогов на отсутствие активности при загрузке",
     "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Отслеживайте каталоги на отсутствие активности при загрузке файлов и получайте уведомления, когда новые файлы не были загружены в течение установленного периода времени.",
     "Failed to load watch rules" : "Ошибка загрузки правил просмотра",
