@@ -2,6 +2,7 @@
 <psalm
 	errorBaseline="tests/psalm-baseline.xml"
 	errorLevel="3"
+	findUnusedBaselineEntry="false"
 	findUnusedCode="false"
 	resolveFromConfigFile="true"
 	phpVersion="8.2"
