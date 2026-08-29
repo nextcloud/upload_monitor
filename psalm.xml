@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <psalm
+	errorBaseline="tests/psalm-baseline.xml"
 	errorLevel="3"
 	findUnusedCode="false"
 	resolveFromConfigFile="true"
@@ -24,12 +25,6 @@
 		<LessSpecificReturnType errorLevel="error"/>
 		<LessSpecificImplementedReturnType errorLevel="error"/>
 		<MoreSpecificReturnType errorLevel="error"/>
-		<UndefinedDocblockClass>
-			<errorLevel type="suppress">
-				<referencedClass name="Doctrine\DBAL\Schema\Schema" />
-				<referencedClass name="Doctrine\DBAL\Schema\Table" />
-			</errorLevel>
-		</UndefinedDocblockClass>
 	</issueHandlers>
 	<stubs>
 		<file name="tests/stubs/oc_hooks_emitter.php" />
