@@ -1,6 +1,9 @@
 { "translations": {
     "Choose" : "Auswielen",
     "Folder" : "Dossier",
+    "Days" : "Deeg",
+    "Create" : "Erstellen",
+    "Never" : "Ni",
     "Save" : "Späicheren",
     "Cancel" : "Cancel"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"

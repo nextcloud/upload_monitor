@@ -3,6 +3,9 @@ OC.L10N.register(
     {
     "Choose" : "Auswielen",
     "Folder" : "Dossier",
+    "Days" : "Deeg",
+    "Create" : "Erstellen",
+    "Never" : "Ni",
     "Save" : "Späicheren",
     "Cancel" : "Cancel"
 },
