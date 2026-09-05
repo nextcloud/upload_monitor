@@ -32,7 +32,7 @@
     "@rspack/cli": "^2.2.2",
     "@rspack/core": "^2.1.10",
     "browserslist": "^4.28.8",
-    "css-loader": "^7.1.2",
+    "css-loader": "^7.1.5",
     "eslint": "^10.9.1",
     "sass": "^1.103.1",
     "sass-loader": "^17.0.1",
