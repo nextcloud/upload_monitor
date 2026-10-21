@@ -5,6 +5,7 @@ OC.L10N.register(
     "Folder not found" : "Dosarul nu a fost găsit",
     "Choose" : "Alege",
     "Folder" : "Director",
+    "Days" : "Zile",
     "Create" : "Crează",
     "Never" : "Niciodată",
     "Save" : "Salvează",
