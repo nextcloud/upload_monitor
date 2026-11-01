@@ -4,7 +4,7 @@ OC.L10N.register(
     "Folder path is too long" : "Mappestien er for lang",
     "Invalid folder path" : "Ugyldig mappesti",
     "Selected path is not a folder" : "Den valgte sti er ikke en mappe",
-    "Folder not found" : "Mappe ikke fundet",
+    "Folder not found" : "Mappen blev ikke fundet",
     "A watch rule for this folder already exists" : "Der findes allerede en overvågningsregel for denne mappe",
     "Maximum number of watch rules reached" : "Det maksimale antal overvågningsregler er nået",
     "Rule not found" : "Reglen blev ikke fundet",
@@ -37,7 +37,7 @@ OC.L10N.register(
     "Edit threshold for {path}" : "Rediger grænsen for {path}",
     "Delete watch rule for {path}" : "Slet overvågningsreglen for {path}",
     "Save" : "Gem",
-    "Cancel" : "Annullér",
+    "Cancel" : "Annuller",
     "_%n day_::_%n days_" : ["%n dag","%n dage"]
 },
 "nplurals=2; plural=(n != 1);");
