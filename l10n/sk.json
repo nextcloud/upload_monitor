@@ -6,7 +6,7 @@
     "A watch rule for this folder already exists" : "Pravidlo sledovania tohto priečinka už existuje",
     "Maximum number of watch rules reached" : "Dosiahol sa maximálny počet pravidiel sledovania",
     "Rule not found" : "Pravidlo sa nenašlo",
-    "Threshold must be between 1 and %s days" : "Prah musí byť od 1 do %s dní",
+    "Threshold must be between 1 and %s days" : "Prah v dňoch musí byť v rozsahu od 1 do %s",
     "Upload Monitor" : "Monitor nahrávaní",
     "No new uploads in %1$s" : "Žiadne nové nahrávania v %1$s",
     "No new files have been uploaded to %1$s since %2$s." : "Od %2$s sa do %1$s nenahrali žiadne nové súbory.",
@@ -14,7 +14,7 @@
     "Watched folder %1$s no longer exists" : "Sledovaný priečinok %1$s už neexistuje",
     "The folder %1$s could not be found anymore. You may want to remove this watch rule." : "Priečinok %1$s sa už nepodarilo nájsť. Možno budete chcieť toto pravidlo sledovania odstrániť.",
     "Monitor directories for upload inactivity" : "Sledovať nečinnosť adresárov pri nahrávaní",
-    "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Sledujte nečinnosť adresárov pri nahrávaní súborov a dostávajte upozornenia, keď sa počas nastaveného obdobia nenahrajú žiadne nové súbory.",
+    "Monitor directories for file upload inactivity and receive notifications when no new files have been uploaded within a configured time period." : "Sledujte priečinky a dostávajte upozornenia, keď sa počas nastaveného obdobia nenahrajú žiadne nové súbory.",
     "Failed to load watch rules" : "Nepodarilo sa načítať pravidlá sledovania",
     "Select folder to watch" : "Vybrať priečinok na sledovanie",
     "Choose" : "Vybrať",
@@ -36,6 +36,6 @@
     "Delete watch rule for {path}" : "Odstrániť pravidlo sledovania pre {path}",
     "Save" : "Uložiť",
     "Cancel" : "Zrušiť",
-    "_%n day_::_%n days_" : ["%n deň","%n dni","%n dní","%n dní"]
+    "_%n day_::_%n days_" : ["%n deň","%n dni","%n dňa","%n dní"]
 },"pluralForm" :"nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);"
 }
